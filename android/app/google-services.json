@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "423590894914",
+    "project_id": "mymoney-15424",
+    "storage_bucket": "mymoney-15424.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:423590894914:android:4c17f454c34db509887cdb",
+        "android_client_info": {
+          "package_name": "com.br.mymoney"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABDn-JDracnP2iaS9az-wbEY6WL9kCi20"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
