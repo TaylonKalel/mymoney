@@ -46,12 +46,7 @@ class _HomePageState extends State<HomePage> {
           future: _future,
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.done) {
-              return Container(
-                alignment: Alignment.bottomRight,
-                height: 100.h,
-                width: 90.w,
-                child: Container(),
-              );
+              return container();
             } else {
               return const CircularProgressIndicator();
             }
@@ -64,19 +59,20 @@ class _HomePageState extends State<HomePage> {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        // columnLeftContainer(),
+        columnLeftContainer(),
         columnCenterContainer(),
-        // columnRightContainer()
+        columnRightContainer()
       ],
     );
   }
 
   Widget columnLeftContainer() {
     return Container(
-      width: 10.w,
-      height: 80.h,
-      alignment: Alignment.topCenter,
-      child: Container(),
+      width: 15.w,
+      height: 100.h,
+      color: Colors.blue,
+      alignment: Alignment.centerLeft,
+      child: const Center(child: Text('Propaganda')),
     );
   }
 
@@ -84,18 +80,29 @@ class _HomePageState extends State<HomePage> {
     return Container(
       alignment: Alignment.topCenter,
       margin: EdgeInsets.symmetric(horizontal: 5.w),
-      width: 70.w,
-      height: 80.h,
-      child: const Text('teste'),
+      width: 60.w,
+      height: 100.h,
+      child: ListView.builder(
+        itemCount: _homeService.ads.length,
+        itemBuilder: (BuildContext context, int index) {
+          return SizedBox(
+            height: 10.h,
+            child: ListTile(
+              title: Text(_homeService.ads[index].title ?? ""),
+            ),
+          );
+        },
+      ),
     );
   }
 
   Widget columnRightContainer() {
     return Container(
-      width: 10.w,
-      height: 80.h,
-      alignment: Alignment.topCenter,
-      child: const Text('teste'),
+      width: 15.w,
+      height: 100.h,
+      color: Colors.blue,
+      alignment: Alignment.centerRight,
+      child: const Center(child: Text('Propaganda')),
     );
   }
 }

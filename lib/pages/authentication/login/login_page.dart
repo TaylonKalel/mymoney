@@ -26,7 +26,11 @@ class _LoginPageState extends State<LoginPage> {
         Positioned.fill(child: Scaffold(
           body: LayoutBuilder(
             builder: (BuildContext context, BoxConstraints constraints) {
-              return body();
+              if (Device.screenType == ScreenType.mobile) {
+                return _form();
+              } else {
+                return body();
+              }
             },
           ),
         )),
@@ -78,7 +82,7 @@ class _LoginPageState extends State<LoginPage> {
         const LogoWidget(),
         const DividerWidget(),
         TextWidget(
-          text: "Cadastrar",
+          text: "Login",
           style: TextStyle(fontSize: 18.sp),
         ),
       ],
